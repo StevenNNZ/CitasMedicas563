@@ -17,7 +17,7 @@ public class GestorPacienteControl implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         DefaultTableModel tmodelo;
-        String valor = consultarPacienteVista.Txtbusqueda.getText();
+        String valor = "'"+consultarPacienteVista.Txtbusqueda.getText()+"'";
         int parametro = 0;
         if (consultarPacienteVista.Ridentificacion.isSelected()) {
             parametro = 1;
@@ -31,7 +31,7 @@ public class GestorPacienteControl implements ActionListener {
         if (consultarPacienteVista.Rsexo.isSelected()) {
             parametro = 4;
         }
-        LinkedList<Modelo.Paciente> pacientes = pacientesModelo.getPacientebyParametro(parametro, valor);
+        LinkedList<Modelo.Paciente> pacientes = pacientesModelo.getPacientebyParametro(parametro,valor);
         String registro[] = new String[5];
         String[] Titulos = {"Identificacion","Nombre","Apellidos","Fecha Nacimiento","Genero"};
         tmodelo  = new DefaultTableModel();

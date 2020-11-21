@@ -54,8 +54,6 @@ public class ConsultarPacientes extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Valor a buscar:");
 
-        Txtbusqueda.setText("''");
-
         Baceptar.setText("Aceptar");
 
         Tresultados.setModel(new javax.swing.table.DefaultTableModel(
