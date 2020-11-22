@@ -2,11 +2,16 @@ package Vista;
 public class PrincipalJFrame extends javax.swing.JFrame {
     RegPaciente regPaciente;
     ConsultarPacientes consultarPaciente;
+    Registrar_medico regMedico;
+    
     public PrincipalJFrame() {
         regPaciente=new RegPaciente();
         consultarPaciente=new ConsultarPacientes();
         add (regPaciente);
         add (consultarPaciente);
+        regMedico=new Registrar_medico();
+        add(regMedico);
+        
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
     }
@@ -137,23 +142,16 @@ public class PrincipalJFrame extends javax.swing.JFrame {
 
     private void IRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRegistrarActionPerformed
         regPaciente.setVisible(true);
-       /* RegPaciente registro = new RegPaciente();
-        escritorio.add(registro);
-        registro.show();*/
+       
         
     }//GEN-LAST:event_IRegistrarActionPerformed
 
     private void IConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IConsultarActionPerformed
         consultarPaciente.setVisible(true);
-        /*ConsultarPacientes consulta = new ConsultarPacientes();
-        escritorio.add(consulta);
-        consulta.show();*/
     }//GEN-LAST:event_IConsultarActionPerformed
 
     private void MIregistrar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIregistrar_medicoActionPerformed
-       Registrar_medico registro = new Registrar_medico ();
-       escritorio.add(registro);
-       registro.show();
+        regMedico.setVisible(true);
     }//GEN-LAST:event_MIregistrar_medicoActionPerformed
 
     private void MIconsultar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIconsultar_medicoActionPerformed
