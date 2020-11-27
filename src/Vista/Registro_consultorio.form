@@ -39,8 +39,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtNumCons" pref="104" max="32767" attributes="0"/>
-                      <Component id="txtNombreCons" max="32767" attributes="0"/>
+                      <Component id="t_Num" pref="104" max="32767" attributes="0"/>
+                      <Component id="t_Nom" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -54,11 +54,11 @@
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblNumconsultorio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNumCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_Num" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtNombreCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_Nom" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblNombreCon" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
@@ -77,24 +77,30 @@
         <Property name="text" type="java.lang.String" value="Numero Consultorio:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNumCons">
+    <Component class="javax.swing.JTextField" name="t_Num">
     </Component>
     <Component class="javax.swing.JLabel" name="lblNombreCon">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombreCons">
+    <Component class="javax.swing.JTextField" name="t_Nom">
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

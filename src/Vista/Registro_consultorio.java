@@ -5,6 +5,12 @@
  */
 package Vista;
 
+import Recursos.Conexion;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cristianvalero
@@ -17,6 +23,10 @@ public class Registro_consultorio extends javax.swing.JInternalFrame {
     public Registro_consultorio() {
         initComponents();
     }
+void limpiar (){
+    t_Nom.setText("");
+    t_Num.setText("");
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,9 +38,9 @@ public class Registro_consultorio extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         lblNumconsultorio = new javax.swing.JLabel();
-        txtNumCons = new javax.swing.JTextField();
+        t_Num = new javax.swing.JTextField();
         lblNombreCon = new javax.swing.JLabel();
-        txtNombreCons = new javax.swing.JTextField();
+        t_Nom = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -46,8 +56,18 @@ public class Registro_consultorio extends javax.swing.JInternalFrame {
         lblNombreCon.setText("Nombre:");
 
         jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Nuevo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,8 +83,8 @@ public class Registro_consultorio extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtNumCons, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                        .addComponent(txtNombreCons))
+                        .addComponent(t_Num, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                        .addComponent(t_Nom))
                     .addComponent(jButton2))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
@@ -74,10 +94,10 @@ public class Registro_consultorio extends javax.swing.JInternalFrame {
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumconsultorio)
-                    .addComponent(txtNumCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_Num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombreCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNombreCon))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -89,13 +109,44 @@ public class Registro_consultorio extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Conexion cc = new Conexion();
+        Connection cn = cc.getConexion();
+        String IDCons,NombreCons;
+        String sql="";
+        NombreCons = t_Nom.getText();
+        IDCons = t_Num.getText();
+        sql="INSERT INTO consultorios (NombreCons,IDCons) VALUES(?,?)";
+        
+        
+        try {
+            PreparedStatement pst = cn.prepareStatement(sql);
+            pst.setString(1, NombreCons);
+            pst.setString(2, IDCons); 
+        
+        int n= pst.executeUpdate();
+         if (n>0){
+             JOptionPane.showMessageDialog(null,"registro guardado");
+             
+    }
+         } catch (SQLException ex) {
+            Logger.getLogger(Registro_consultorio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+      limpiar();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel lblNombreCon;
     private javax.swing.JLabel lblNumconsultorio;
-    private javax.swing.JTextField txtNombreCons;
-    private javax.swing.JTextField txtNumCons;
+    private javax.swing.JTextField t_Nom;
+    private javax.swing.JTextField t_Num;
     // End of variables declaration//GEN-END:variables
 }
