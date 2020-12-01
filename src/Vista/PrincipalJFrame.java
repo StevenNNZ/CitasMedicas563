@@ -1,4 +1,7 @@
 package Vista;
+
+import javax.swing.JOptionPane;
+
 public class PrincipalJFrame extends javax.swing.JFrame {
     RegPaciente regPaciente;
     ConsultarPacientes consultarPaciente;
@@ -137,7 +140,9 @@ public class PrincipalJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-    System.exit (0);       
+    JOptionPane.showMessageDialog(null, "¡Gracias por utilizar nuestros servicios!");
+    System.exit (0);   
+    
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void IRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IRegistrarActionPerformed
