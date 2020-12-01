@@ -5,11 +5,6 @@
  */
 package Vista;
 
-import Recursos.Conexion;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,8 +36,8 @@ void limpiar (){
         t_Num = new javax.swing.JTextField();
         lblNombreCon = new javax.swing.JLabel();
         t_Nom = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_re = new javax.swing.JButton();
+        btn_nu = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -55,17 +50,23 @@ void limpiar (){
 
         lblNombreCon.setText("Nombre:");
 
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        t_Nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                t_NomActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Nuevo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_re.setText("Registrar");
+        btn_re.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_reActionPerformed(evt);
+            }
+        });
+
+        btn_nu.setText("Nuevo");
+        btn_nu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_nuActionPerformed(evt);
             }
         });
 
@@ -76,7 +77,7 @@ void limpiar (){
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(btn_re)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblNumconsultorio)
                         .addComponent(lblNombreCon)))
@@ -85,7 +86,7 @@ void limpiar (){
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(t_Num, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
                         .addComponent(t_Nom))
-                    .addComponent(jButton2))
+                    .addComponent(btn_nu))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -101,52 +102,35 @@ void limpiar (){
                     .addComponent(lblNombreCon))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_re)
+                    .addComponent(btn_nu))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Conexion cc = new Conexion();
-        Connection cn = cc.getConexion();
-        String IDCons,NombreCons;
-        String sql="";
-        NombreCons = t_Nom.getText();
-        IDCons = t_Num.getText();
-        sql="INSERT INTO consultorios (NombreCons,IDCons) VALUES(?,?)";
-        
-        
-        try {
-            PreparedStatement pst = cn.prepareStatement(sql);
-            pst.setString(1, NombreCons);
-            pst.setString(2, IDCons); 
-        
-        int n= pst.executeUpdate();
-         if (n>0){
-             JOptionPane.showMessageDialog(null,"registro guardado");
-             
-    }
-         } catch (SQLException ex) {
-            Logger.getLogger(Registro_consultorio.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_reActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_reActionPerformed
+
+    private void btn_nuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuActionPerformed
 
       limpiar();
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_nuActionPerformed
+
+    private void t_NomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_NomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t_NomActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btn_nu;
+    public javax.swing.JButton btn_re;
     private javax.swing.JLabel lblNombreCon;
     private javax.swing.JLabel lblNumconsultorio;
-    private javax.swing.JTextField t_Nom;
-    private javax.swing.JTextField t_Num;
+    public javax.swing.JTextField t_Nom;
+    public javax.swing.JTextField t_Num;
     // End of variables declaration//GEN-END:variables
 }
