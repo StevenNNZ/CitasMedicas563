@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2020 a las 01:51:44
+-- Tiempo de generación: 01-12-2020 a las 22:19:09
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.2
 
@@ -57,10 +57,17 @@ CREATE TABLE `consultorios` (
 --
 
 CREATE TABLE `medicos` (
-  `MedIdentificacion` int(10) NOT NULL,
+  `MedIdentificacion` int(20) NOT NULL,
   `MedNombre` varchar(50) DEFAULT NULL,
   `MedApellido` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `medicos`
+--
+
+INSERT INTO `medicos` (`MedIdentificacion`, `MedNombre`, `MedApellido`) VALUES
+(10022, 'Alfredo', 'Forero');
 
 -- --------------------------------------------------------
 
@@ -69,11 +76,11 @@ CREATE TABLE `medicos` (
 --
 
 CREATE TABLE `pacientes` (
-  `PacIdentificacion` int(10) NOT NULL,
+  `PacIdentificacion` int(25) NOT NULL,
   `PacNombre` varchar(50) NOT NULL,
   `PacApellidos` varchar(50) NOT NULL,
-  `PacFechaNacimiento` date NOT NULL,
-  `PacSexo` enum('F','M') NOT NULL
+  `PacFechaNacimiento` varchar(100) NOT NULL,
+  `PacSexo` enum('M','F') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -150,13 +157,13 @@ ALTER TABLE `consultorios`
 -- AUTO_INCREMENT de la tabla `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `MedIdentificacion` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `MedIdentificacion` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10023;
 
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `PacIdentificacion` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `PacIdentificacion` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1045685545;
 
 --
 -- AUTO_INCREMENT de la tabla `tratamientos`
