@@ -1,9 +1,5 @@
 package Modelo;
-<<<<<<< HEAD
 
-=======
-/*
->>>>>>> origin/jeisson
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,6 +33,7 @@ public class GestorMedico {
             pst.setString(3,medico.getApellido());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Médico registrado con éxito");
+           
 
         } catch (SQLException ex) {
             Logger.getLogger(GestorPaciente.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,5 +95,4 @@ public class GestorMedico {
 
         return resultado;
     }
-}
-*/
+}*/

@@ -1,9 +1,6 @@
 package Modelo;
-<<<<<<< HEAD
 
-=======
-/*
->>>>>>> origin/jeisson
+
 public class Medico {
     private String identificacion;
     private String nombre;
@@ -41,7 +38,4 @@ public class Medico {
     
     
 }
-<<<<<<< HEAD
-=======
-*/
->>>>>>> origin/jeisson
+

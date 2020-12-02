@@ -6,24 +6,19 @@ public class PrincipalJFrame extends javax.swing.JFrame {
     RegPaciente regPaciente;
     ConsultarPacientes consultarPaciente;
     Registrar_medico regMedico;
+    Registro_consultorio regConsultorio;
     
-<<<<<<< HEAD
     
-=======
->>>>>>> origin/jeisson
     public PrincipalJFrame() {
         regPaciente=new RegPaciente();
         consultarPaciente=new ConsultarPacientes();
-        
+        regMedico=new Registrar_medico();
+        regConsultorio=new Registro_consultorio();
+        add(regConsultorio);
+        add(regMedico);
         add (regPaciente);
         add (consultarPaciente);
-        regMedico=new Registrar_medico();
-        add(regMedico);
         
-<<<<<<< HEAD
-        
-=======
->>>>>>> origin/jeisson
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
     }

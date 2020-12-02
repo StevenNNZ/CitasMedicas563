@@ -1,13 +1,12 @@
-
 package Controlador;
-
+/*
 import Vista.Registro_consultorio;
 import java.awt.event.*;
 import java.util.LinkedList;
 import javax.swing.table.DefaultTableModel;
 
-public class GestoConsultorioControl {
-  /*  public class GestorConsultorioControl implements ActionListener {
+public class GestorConsultorioControl {
+    public class GestorConsultorioControl implements ActionListener {
 
     Modelo.GestorConsultorio ConsultorioModelo;
     Vista.ConsultarConsultorios consultarConsultorioVista;
