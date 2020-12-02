@@ -25,8 +25,8 @@ public class PacienteControl implements ActionListener {
             String identificacion = pacienteVista.IdentificaconTxt.getText();
             String nombres = pacienteVista.NombreTxt.getText();
             String apellidos = pacienteVista.ApellidosTxt.getText();
-            //SimpleDateFormat formato = new SimpleDateFormat("dd / MM / yyyy");
-            String fecha_nacimiento = (pacienteVista.jDateChooser1.getDateFormatString());
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            String fecha_nacimiento=formato.format(pacienteVista.jDateChooser1.getDate());
             String genero = "";
             if (pacienteVista.rb_masculino.isSelected()) {
                 genero = "M";

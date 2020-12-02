@@ -52,7 +52,7 @@ public class GestorMedico {
         switch (parametro) {
             case 1: //if(pac.getIdentificacion().equals(valor))
                 sql = "select * from pacientes where PACIDENTIFICACION =" + valor + "";
-                //select * from pacientes where PACNOMBRE= "Steven"
+                //select * from pacientes where PACNOMBRE= " + "
 //resultado.add(pac);
                 break;
             case 2: //if(pac.getNombres().equals(valor))
