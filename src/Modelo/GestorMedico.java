@@ -16,10 +16,10 @@ public class GestorMedico {
 
     private static LinkedList<Medico> medicos;
     Connection conn;
-    Conexion conectar=new Conexion();
+    Conexion conectar = new Conexion();
 
     public GestorMedico() {
-       
+
         medicos = new LinkedList<Medico>();
     }
 
@@ -28,66 +28,43 @@ public class GestorMedico {
         try {
             conn = conectar.getConexion();
             pst = conn.prepareStatement("insert into medicos values(?,?,?)");
-            pst.setString(1,medico.getIdentificacion());
-            pst.setString(2,medico.getNombre());
-            pst.setString(3,medico.getApellido());
+            pst.setString(1, medico.getIdentificacion());
+            pst.setString(2, medico.getNombre());
+            pst.setString(3, medico.getApellido());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Médico registrado con éxito");
-           
 
         } catch (SQLException ex) {
             Logger.getLogger(GestorPaciente.class.getName()).log(Level.SEVERE, null, ex);
 
         }
 
-        //pacientes.add(paciente);
+        medicos.add(medico);
     }
-
-
 
     public LinkedList<Medico> getMedicobyParametro(int parametro, String valor) {
         LinkedList<Medico> resultado = new LinkedList<Medico>();
         String sql = "";
         conn = conectar.getConexion();
-//for(Paciente pac:pacientes)
-//{
         switch (parametro) {
-            case 1: //if(pac.getIdentificacion().equals(valor))
-<<<<<<< HEAD
-                sql = "select * from pacientes where PACIDENTIFICACION =" + valor + "";
-<<<<<<< HEAD
-                //select * from pacientes where PACNOMBRE= " + "
-=======
-=======
+            case 1:
                 sql = "select * from medicos where MedIdentificacion =" + valor + "";
->>>>>>> origin/carlos
-                //select * from pacientes where PACNOMBRE= "Steven"
->>>>>>> origin/jeisson
-//resultado.add(pac);
                 break;
-            case 2: //if(pac.getNombres().equals(valor))
+            case 2:
                 sql = "select * from medicos where MedNombre =" + valor + "";
-//resultado.add(pac);
                 break;
 
-            case 3: //if(pac.getApellidos().equals(valor))
+            case 3:
                 sql = "select * from medicos where MedApellido =" + valor + "";
-//resultado.add(pac);
                 break;
-            
-
         }
-//}
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-
-                resultado.add(new Medico (rs.getString("MedIdentificacion"),rs.getString("MedNombre"),rs.getString("MedApellido")));
-
+                resultado.add(new Medico(rs.getString("MedIdentificacion"), rs.getString("MedNombre"), rs.getString("MedApellido")));
             }
             st.close();
-            
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
@@ -96,10 +73,5 @@ public class GestorMedico {
 
         return resultado;
     }
-<<<<<<< HEAD
-}*/
-=======
-}
 
-//s
->>>>>>> origin/carlos
+}
