@@ -7,13 +7,15 @@ public class PrincipalJFrame extends javax.swing.JFrame {
     ConsultarPacientes consultarPaciente;
     Registrar_medico regMedico;
     Registro_consultorio regConsultorio;
-    
+    ConsultarConsultorios consConsultorio;
     
     public PrincipalJFrame() {
         regPaciente=new RegPaciente();
         consultarPaciente=new ConsultarPacientes();
         regMedico=new Registrar_medico();
         regConsultorio=new Registro_consultorio();
+        consConsultorio=new ConsultarConsultorios();
+        add (consConsultorio);
         add(regConsultorio);
         add(regMedico);
         add (regPaciente);

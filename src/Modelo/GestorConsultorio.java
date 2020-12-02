@@ -37,14 +37,14 @@ public class GestorConsultorio {
 
     }
 
-    public LinkedList<Consultorio> getPacientebyParametro(int parametro, String valor) {
+    public LinkedList<Consultorio> getConsultoriobyParametro(int parametro, String valor) {
         LinkedList<Consultorio> resultado = new LinkedList<Consultorio>();
         String sql = "";
         conn = conectar.getConexion();
 
         switch (parametro) {
             case 1:
-                sql = "select * from consultorios where ConNumero  =" + valor + "";
+                sql = "select * from consultorios where ConNumero =" + valor + "";
                 break;
             case 2:
                 sql = "select * from consultorios where ConNombre =" + valor + "";
@@ -60,7 +60,7 @@ public class GestorConsultorio {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
-        return null;
+        return resultado;
 
     }
 }
