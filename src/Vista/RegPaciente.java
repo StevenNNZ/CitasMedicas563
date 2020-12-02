@@ -1,4 +1,6 @@
 package Vista;
+
+
 public class RegPaciente extends javax.swing.JInternalFrame {
     private Controlador.PacienteControl pacienteControlador;
     public RegPaciente() {

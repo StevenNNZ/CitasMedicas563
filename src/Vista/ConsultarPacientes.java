@@ -54,6 +54,12 @@ public class ConsultarPacientes extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Valor a buscar:");
 
+        Txtbusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtbusquedaActionPerformed(evt);
+            }
+        });
+
         Baceptar.setText("Aceptar");
 
         Tresultados.setModel(new javax.swing.table.DefaultTableModel(
@@ -114,6 +120,10 @@ public class ConsultarPacientes extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TxtbusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtbusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtbusquedaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

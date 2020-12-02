@@ -42,8 +42,9 @@ public class GestorMedico {
 
         //pacientes.add(paciente);
     }
-}
-/*
+
+
+
     public LinkedList<Medico> getMedicobyParametro(int parametro, String valor) {
         LinkedList<Medico> resultado = new LinkedList<Medico>();
         String sql = "";
@@ -52,25 +53,25 @@ public class GestorMedico {
 //{
         switch (parametro) {
             case 1: //if(pac.getIdentificacion().equals(valor))
+<<<<<<< HEAD
                 sql = "select * from pacientes where PACIDENTIFICACION =" + valor + "";
 <<<<<<< HEAD
                 //select * from pacientes where PACNOMBRE= " + "
 =======
+=======
+                sql = "select * from medicos where MedIdentificacion =" + valor + "";
+>>>>>>> origin/carlos
                 //select * from pacientes where PACNOMBRE= "Steven"
 >>>>>>> origin/jeisson
 //resultado.add(pac);
                 break;
             case 2: //if(pac.getNombres().equals(valor))
-                sql = "select * from pacientes where PACNOMBRE =" + valor + "";
+                sql = "select * from medicos where MedNombre =" + valor + "";
 //resultado.add(pac);
                 break;
 
             case 3: //if(pac.getApellidos().equals(valor))
-                sql = "select * from pacientes where PACAPELLIDOS =" + valor + "";
-//resultado.add(pac);
-                break;
-            case 4: //if(pac.getGenero().equals(valor))
-                sql = "select * from pacientes where PACSEXO =" + valor + "";
+                sql = "select * from medicos where MedApellido =" + valor + "";
 //resultado.add(pac);
                 break;
             
@@ -82,7 +83,7 @@ public class GestorMedico {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
 
-                resultado.add(new Paciente(rs.getString("PACIDENTIFICACION"), rs.getString("PACNOMBRE"), rs.getString("PACAPELLIDOS"), rs.getString("PACFECHANACIMIENTO"), rs.getString("PACSEXO")));
+                resultado.add(new Medico (rs.getString("MedIdentificacion"),rs.getString("MedNombre"),rs.getString("MedApellido")));
 
             }
             st.close();
@@ -95,4 +96,10 @@ public class GestorMedico {
 
         return resultado;
     }
+<<<<<<< HEAD
 }*/
+=======
+}
+
+//s
+>>>>>>> origin/carlos
