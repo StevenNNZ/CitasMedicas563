@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonModel;
 
+
 public class MedicoControl implements ActionListener {
 
     Vista.Registrar_medico medicoVista;

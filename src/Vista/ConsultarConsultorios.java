@@ -1,9 +1,22 @@
 package Vista;
 
+import javax.swing.table.DefaultTableModel;
+
 public class ConsultarConsultorios extends javax.swing.JInternalFrame {
+
+    public Controlador.GestorConsultorioControl gestorConsultorioControl;
+    private DefaultTableModel tabla;
 
     public ConsultarConsultorios() {
         initComponents();
+        gestorConsultorioControl = new Controlador.GestorConsultorioControl(this);
+        String titulosTabla[] = {"Identificación", "Nombres"};
+        tabla = new DefaultTableModel(null, titulosTabla);
+        TablaConsulta.setModel(tabla);
+        BConsultar.addActionListener(gestorConsultorioControl);
+    }
+    public DefaultTableModel getTableModel () {
+        return tabla;
     }
 
     @SuppressWarnings("unchecked")
@@ -102,13 +115,13 @@ public class ConsultarConsultorios extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BConsultar;
-    private javax.swing.JRadioButton RBIdentificacion;
-    private javax.swing.JRadioButton RBNombre;
-    private javax.swing.JTable TablaConsulta;
+    public javax.swing.JButton BConsultar;
+    public javax.swing.JRadioButton RBIdentificacion;
+    public javax.swing.JRadioButton RBNombre;
+    public javax.swing.JTable TablaConsulta;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtConsulta;
+    public javax.swing.JTextField txtConsulta;
     // End of variables declaration//GEN-END:variables
 }

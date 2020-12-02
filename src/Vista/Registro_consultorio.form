@@ -30,7 +30,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_re" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblNumconsultorio" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="lblNombreCon" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -39,10 +39,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtNumCons" pref="104" max="32767" attributes="0"/>
-                      <Component id="txtNombreCons" max="32767" attributes="0"/>
+                      <Component id="t_Num" pref="104" max="32767" attributes="0"/>
+                      <Component id="t_Nom" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_nu" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="112" max="32767" attributes="0"/>
           </Group>
@@ -54,17 +54,17 @@
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblNumconsultorio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNumCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_Num" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtNombreCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="t_Nom" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblNombreCon" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_re" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_nu" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="78" max="32767" attributes="0"/>
           </Group>
@@ -77,24 +77,33 @@
         <Property name="text" type="java.lang.String" value="Numero Consultorio:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNumCons">
+    <Component class="javax.swing.JTextField" name="t_Num">
     </Component>
     <Component class="javax.swing.JLabel" name="lblNombreCon">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombreCons">
+    <Component class="javax.swing.JTextField" name="t_Nom">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="t_NomActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_re">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_reActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btn_nu">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nuActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

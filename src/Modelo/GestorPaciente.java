@@ -41,7 +41,7 @@ public class GestorPaciente {
 
         }
 
-        //pacientes.add(paciente);
+        pacientes.add(paciente);
     }
 
     public LinkedList<Paciente> getPacientebyParametro(int parametro, String valor) {
