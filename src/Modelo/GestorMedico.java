@@ -1,5 +1,9 @@
 package Modelo;
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> origin/jeisson
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,7 +56,11 @@ public class GestorMedico {
         switch (parametro) {
             case 1: //if(pac.getIdentificacion().equals(valor))
                 sql = "select * from pacientes where PACIDENTIFICACION =" + valor + "";
+<<<<<<< HEAD
                 //select * from pacientes where PACNOMBRE= " + "
+=======
+                //select * from pacientes where PACNOMBRE= "Steven"
+>>>>>>> origin/jeisson
 //resultado.add(pac);
                 break;
             case 2: //if(pac.getNombres().equals(valor))

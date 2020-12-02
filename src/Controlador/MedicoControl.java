@@ -7,7 +7,11 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonModel;
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> origin/jeisson
 public class MedicoControl implements ActionListener {
 
     Vista.Registrar_medico medicoVista;
@@ -42,3 +46,7 @@ public class MedicoControl implements ActionListener {
     
     
 }
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> origin/jeisson
