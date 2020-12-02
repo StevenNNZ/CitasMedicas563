@@ -155,7 +155,7 @@ public class PrincipalJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_MIregistrar_medicoActionPerformed
 
     private void MIconsultar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIconsultar_medicoActionPerformed
-        ConsultarMedicos registro = new ConsultarMedicos();
+       ConsultarMedicos registro = new ConsultarMedicos();
        escritorio.add(registro);
        registro.show();
     }//GEN-LAST:event_MIconsultar_medicoActionPerformed
